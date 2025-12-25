@@ -5,14 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>VideoDownloader | Support</title>
     <link rel="stylesheet" href="styles.css">
-    <link href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700;900&display=swap" rel="stylesheet">
 </head>
 <body>
-    <canvas id="matrix"></canvas>
-
     <div class="container page-center">
         <header>
-            <a href="https://latomos-afk.github.io/VideoDownloader-web_home/" class="logo">&lt;VideoDownloader/&gt;</a>
+            <a href="https://latomos-afk.github.io/VideoDownloader-web_home/" class="logo">VideoDownloader</a>
             <nav>
                 <a href="https://latomos-afk.github.io/VideoDownloader-web_download/">Download</a>
                 <a href="https://latomos-afk.github.io/VideoDownloader-web_support/" class="active">Support</a>
@@ -21,8 +19,8 @@
         </header>
 
         <section class="support">
-            <h2>&lt;SUPPORT_PROJECT/&gt;</h2>
-            <p class="desc-support">Fuel the code. Choose your method.</p>
+            <h2 class="section-title">Support the Project</h2>
+            <p class="section-desc">Help keep the development alive. Choose your preferred method.</p>
 
             <div class="support-grid">
                 <a href="https://patreon.com/siratomos?utm_medium=unknown&utm_source=join_link&utm_campaign=creatorshare_creator&utm_content=copyLink" target="_blank" class="btn-support patreon">
@@ -37,50 +35,9 @@
         </section>
 
         <footer>
-            <p>Developed by SirAtomos © 2025</p>
+            <p>© 2025 SirAtomos Development.</p>
             <p>Open Source Project licensed under MIT.</p>
         </footer>
     </div>
-
-    <script>
-        const canvas = document.getElementById('matrix');
-        const ctx = canvas.getContext('2d');
-
-        canvas.width = window.innerWidth;
-        canvas.height = window.innerHeight;
-
-        const letters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ123456789@#$%^&*()*&^%";
-        const fontSize = 16;
-        const columns = canvas.width / fontSize;
-        const drops = [];
-
-        for(let x = 0; x < columns; x++)
-            drops[x] = 1;
-
-        function draw() {
-            ctx.fillStyle = "rgba(5, 5, 5, 0.05)";
-            ctx.fillRect(0, 0, canvas.width, canvas.height);
-
-            ctx.fillStyle = "#0F0";
-            ctx.font = fontSize + "px arial";
-
-            for(let i = 0; i < drops.length; i++) {
-                const text = letters[Math.floor(Math.random() * letters.length)];
-                ctx.fillText(text, i * fontSize, drops[i] * fontSize);
-
-                if(drops[i] * fontSize > canvas.height && Math.random() > 0.975)
-                    drops[i] = 0;
-                
-                drops[i]++;
-            }
-        }
-
-        setInterval(draw, 33);
-
-        window.addEventListener('resize', () => {
-            canvas.width = window.innerWidth;
-            canvas.height = window.innerHeight;
-        });
-    </script>
 </body>
 </html>
