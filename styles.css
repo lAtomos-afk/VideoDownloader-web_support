@@ -4,8 +4,6 @@
     --text-main: #ffffff;
     --text-secondary: #b3b3b3;
     --primary: #00ff41;
-    --primary-dim: rgba(0, 255, 65, 0.1);
-    
     --border-color: #333333;
 }
 
@@ -218,6 +216,11 @@ h1::selection {
     box-shadow: 0 0 10px rgba(0, 255, 65, 0.2);
 }
 
+.btn i {
+    margin-right: 15px;
+    font-size: 1.3rem;
+}
+
 .btn:hover {
     background: #ffffff;
     border-color: #ffffff;
@@ -260,7 +263,7 @@ h1::selection {
     border-radius: 6px;
     transition: 0.3s;
     cursor: pointer;
-    min-width: 180px;   
+    min-width: 180px;
     background: transparent;
     color: var(--text-secondary);
     border: 1px solid var(--border-color);
