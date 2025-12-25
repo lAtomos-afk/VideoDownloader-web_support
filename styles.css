@@ -7,6 +7,16 @@
     --bg-card: rgba(10, 10, 10, 0.75);
 }
 
+::selection {
+    background: var(--primary);
+    color: #000000;
+}
+
+::-moz-selection {
+    background: var(--primary);
+    color: #000000;
+}
+
 * {
     margin: 0;
     padding: 0;
@@ -28,7 +38,7 @@ body {
 
 body::before {
     content: "";
-    position: fixed; 
+    position: fixed;
     top: 0;
     left: 0;
     width: 100%;
